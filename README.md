@@ -81,7 +81,13 @@ Generalmente con la tecla **F12** o al hacer click derecho en la pantalla del na
 </div>
 
 ### 5️⃣ Pegar el código de server.js 
-Aquí simplemente se debe pegar el código que copiamos del archivo descargado y presionar Enter, esto hará que en la página se muestre un Captcha que una vez resuelto, creará la sala y proporcionará el link a la misma.
+Aquí simplemente se debe **pegar el código** que copiamos del archivo descargado y **presionar Enter**, esto hará que en la página se muestre un Captcha que una vez resuelto, **creará la sala y proporcionará el link a la misma.**
 
 > [!WARNING]  
 > Si es la primera vez que se abre la consola en el navegador, se debe introducir el comando `allow pasting` y presionar Enter, después de eso ya se debería poder pegar el código del script.
+
+### 6️⃣ A JUGAR ⚽⚽⚽
+
+<div>
+<img width="50%" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzBxZjM2dHp3Zzdld2ZxbmFjNjY3YWtqajB4bXBoaHUyZ2hvODV4OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2HavnYT1BfENa/giphy.gif">
+</div>
