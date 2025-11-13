@@ -1,19 +1,23 @@
-# ⚽ Servidor Headless de Haxball – by FieraJhamer ⚽
+# ⚽ Servidor automático de Haxball – by FieraJhamer ⚽
 
 Este simple script genera un servidor autogestionado para [Haxball](https://www.haxball.com/), con sistemas de administración, estadísticas, balance automático de equipos y **powershot**. Diseñado para ofrecer una experiencia fluida, sin preocupaciones al agrandar o achicar el mapa, mover jugadores manualmente para balancear equipos o kickear jugadores inactivos. 
+
+---
 
 > [!NOTE]  
 > Las funcionalidades de estadísticas globales pueden contener errores, el script se irá actualizando para corregir estos inconvenientes, se aceptan sugerencias o ideas, a mi [correo personal](mailto:gmz248alejandro@gmail.com).
 
 ## 🧩 Funcionalidades principales
 
-- ⚡ **Powershot**: dispara la pelota con fuerza extra si mantienes la presión por más de cierto tiempo.
+- ⚡ **Powershot**: dispara la pelota con fuerza extra si la mantienes por más de cierto tiempo.
 
-- ⚙️ **Inicio automático** de los partidos cuando hay jugadores.
+- ⚙️ **Inicio automático** con la posibilidad de activar o desactivar.
 
 - ⚖️ **Balance automático de equipos** para mantener la competitividad.
 
-- 📊 **Estadísticas por jugador (beta)**: goles, asistencias, últimos toques y participación en jugadas.
+- ↕️ **Agrandamiento o achicamiento del estadio:** se ajusta automáticamente a la cantidad de jugadores
+
+- 📊 **Estadísticas por jugador**: goles y asistencias en guardadas para cada jugador, con tops.
 
 - 🚷 **Detección de AFK**: evita que jugadores inactivos ocupen espacio.
 
@@ -21,7 +25,7 @@ Este simple script genera un servidor autogestionado para [Haxball](https://www.
 
 - 🗣️ **Comandos de texto** para tener control desde el chat del juego.
 
-
+---
 
 ## 🧠 Comandos disponibles
 
@@ -31,12 +35,13 @@ Este simple script genera un servidor autogestionado para [Haxball](https://www.
 | `!autostart` | Activar o desactivar el inicio automático de los partidos |
 | `!mix` | Mezclar y balancear los equipos manualmente |
 | `!stats` | Mostrar tus estadísticas personales |
-| `!top` | Mostrar el ranking de mejores jugadores **(beta)** |
+| `!top` | Mostrar el ranking de mejores jugadores |
 | `!afk` | Entrar o salir del modo espectador |
 | `!nv` | Salir del servidor y despedirse |
 
 > 💡 La contraseña de admin se configura en el código (variable `adminPassword`).
 
+---
 
 ## ⚙️ Configuración principal
 
@@ -53,6 +58,7 @@ var room = HBInit({
 const adminPassword = "PASSWORD"; // contraseña para reclamar admin, ejemplo: !admin PASSWORD
 
 ```
+---
 
 ## ⚙️ Descarga y uso
 

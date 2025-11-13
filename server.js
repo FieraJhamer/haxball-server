@@ -1,8 +1,8 @@
 var room = HBInit({
-    roomName: "Haxball Headless Server - by FieraJhamer", // Nombre de la sala
+    roomName: "Haxball Headless Server - by FieraJhamer", // Nombre de la sala, modificalo a gusto
     maxPlayers: 30, // Límite de jugadores
     public: true,  // Sala pública (true), sala privada (false)
-    noPlayer: true
+    noPlayer: true,
 });
 
 // Color de cancha default: 213852 #213852 
@@ -25,7 +25,7 @@ let lastTouch = null;
 let secondLastTouch = null;
 
 // Estadísticas en memoria para cada jugador
-let playerStats = {}; // {id: {goles: 0, asistencias: 0}}
+let playerStats = {}; // {id: {auth: "", name: "", goals: 0, assists: 0}}
 
 // ====================== POWERSHOT ======================
 let powershotCounter = 0;
@@ -314,12 +314,30 @@ function checkAutoStart() {
 
 // ====================== EVENTOS ======================
 room.onPlayerJoin = function(player) {
+    // Buscar si el jugador ya tiene estadísticas con su auth
+    if (playerStats[player.id]) {
+        // Ya existe con este ID, no hacer nada
+    } else {
+        // Buscar por auth
+        let foundAuth = false;
+        for (let id in playerStats) {
+            if (playerStats[id].auth === player.auth) {
+                // Encontrado: transferir estadísticas al nuevo ID
+                playerStats[player.id] = playerStats[id];
+                delete playerStats[id];
+                foundAuth = true;
+                break;
+            }
+        }
+        
+        // Si no se encontró por auth, inicializar nuevas estadísticas
+        if (!foundAuth) {
+            playerStats[player.id] = { auth: player.auth, name: player.name, goals: 0, assists: 0 };
+        }
+    }
+
     joinTimes[player.id] = Date.now();
     autoAssignTeam(player);
-
-    // inicializar estadísticas
-    playerStats[player.id] = { goals: 0, assists: 0 };
-
     rebalanceTeams();
 };
 
@@ -340,7 +358,6 @@ room.onPlayerTeamChange = function(player, byPlayer) {
 room.onPlayerLeave = function(player) {
     delete joinTimes[player.id];
     delete lastValidTeam[player.id];
-    delete playerStats[player.id];
 
     rebalanceTeams();
 };
@@ -498,10 +515,9 @@ room.onPlayerChat = function(player, message) {
 
     if (message === "!top") {
         let players = Object.keys(playerStats).map(id => {
-            let p = room.getPlayerList().find(pl => pl.id == id);
             return {
                 id,
-                name: p ? p.name : "Desconocido",
+                name: playerStats[id].name,
                 goals: playerStats[id].goals,
                 assists: playerStats[id].assists
             };
