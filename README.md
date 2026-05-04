@@ -1,6 +1,6 @@
-# ⚽ Servidor automático de Haxball – by FieraJhamer ⚽
+# ⚽ Servidor automático de Haxball ⚽
 
-Este simple script genera un servidor autogestionado para [Haxball](https://www.haxball.com/), con sistemas de administración, estadísticas, balance automático de equipos y **powershot**. Diseñado para ofrecer una experiencia fluida, sin preocupaciones al agrandar o achicar el mapa, mover jugadores manualmente para balancear equipos o kickear jugadores inactivos. 
+Este simple script genera un servidor autogestionado para [Haxball](https://www.haxball.com/), con sistemas de administración, estadísticas, balance automático de equipos y **powershot**. Diseñado para que una vez iniciado el partido, se pueda dejar estar sin preocupaciones al agrandar o achicar el mapa, mover jugadores manualmente para balancear equipos o kickear jugadores inactivos. 
 
 ---
 
@@ -93,3 +93,5 @@ Aquí simplemente se debe **pegar el código** que copiamos del archivo descarga
 <div>
 <img width="50%" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzBxZjM2dHp3Zzdld2ZxbmFjNjY3YWtqajB4bXBoaHUyZ2hvODV4OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2HavnYT1BfENa/giphy.gif">
 </div>
+
+Desarrollado por FieraJhamer 🙀
